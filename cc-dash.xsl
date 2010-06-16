@@ -16,7 +16,7 @@
 		}
 
 		.failed {
-			background-color: #FF7777;
+			background-color: #FF0000;
 			width: 20%;
 			float: left;
 			height: 75px;
@@ -28,11 +28,13 @@
 
 		.pass {
 			background-color: #00FF00;
-			width: 20%;
-			height: 75px;
+			width: 10%;
+			height: 35px;
 			float: left;
 			margin: 5px;
 			padding: 5px;
+			font-size: 75%;
+			overflow: hidden;
 		}
     	</style>
       </head>
@@ -54,21 +56,5 @@
         </xsl:for-each>
       </body>
     </html>
-  </xsl:template>
-
-  <xsl:template match="item">
-    <xsl:choose>
-      <xsl:when test="../description = 'Build FAILED'">
-        <div class="failed">
-          <xsl:value-of select="../title"/>
-        </div>
-      </xsl:when>
-      <xsl:otherwise>
-        <div class="pass">
-          <xsl:value-of select="../title"/>
-        </div>
-      </xsl:otherwise>
-    </xsl:choose>
-
   </xsl:template>
 </xsl:stylesheet>
